@@ -15,7 +15,9 @@ fun main () {
     val scoreStudent3 = 3
     val scoreStudent4 = 5
 
-    val averageScore = (scoreStudent1 + scoreStudent2 + scoreStudent3 + scoreStudent4) / 4.0
+    val studentCount = 4
+
+    val averageScore = (scoreStudent1 + scoreStudent2 + scoreStudent3 + scoreStudent4).toFloat() / studentCount
 
     println("Средний балл успеваемости равен: " + String.format("%.2f", averageScore))
 }
