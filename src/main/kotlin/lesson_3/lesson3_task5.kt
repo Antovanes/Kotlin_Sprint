@@ -11,11 +11,9 @@ fun main () {
 
     val logStr = "D2-D4;0"
 
-    val moveFrom = logStr.substring(0..1)
-    val moveTo = logStr.substring(3..4)
-    val moveNum = logStr.substring(logStr.length - 1).toInt()
+    val splitLogStr = logStr.split('-', ';')
 
-    println("Ход номер: $moveNum")
-    println("Откуда: $moveFrom")
-    println("Куда: $moveTo")
+    println("Ход номер: ${splitLogStr[2]}")
+    println("Откуда: ${splitLogStr[0]}")
+    println("Куда: ${splitLogStr[1]}")
 }
