@@ -19,9 +19,19 @@ fun main () {
     val averageWeightTo = 100
     val averageVolume = 100
 
-    println("Груз с весом 20 кг и объемом 80 л соответствует категории 'Average': " +
-            "${(20 > averageWeightFrom) and (20 <= averageWeightTo) and (80 < averageVolume)}")
+    val cargo1weight = 20   // вес 1-го проверочного груза
+    val cargo1volume = 80   // объём 1-го проверочного груза
 
-    println("Груз с весом 50 кг и объемом 100 л соответствует категории 'Average': " +
-            "${(50 > averageWeightFrom) and (50 <= averageWeightTo) and (100 < averageVolume)}")
+    val cargo2weight = 50   // вес 2-го проверочного груза
+    val cargo2volume = 100  // объём 2-го проверочного груза
+
+    var strAccordance = if ((cargo1weight > averageWeightFrom)
+        and (cargo1weight <= averageWeightTo) and (cargo1volume < averageVolume)) "" else "не"
+
+    println("Груз с весом ${cargo1weight}кг и объемом ${cargo1volume}л $strAccordance соответствует категории 'Average'")
+
+    strAccordance = if ((cargo2weight > averageWeightFrom)
+        and (cargo2weight <= averageWeightTo) and (cargo2volume < averageVolume)) "" else "не"
+
+    println("Груз с весом ${cargo2weight}кг и объемом ${cargo2volume}л $strAccordance соответствует категории 'Average'")
 }
