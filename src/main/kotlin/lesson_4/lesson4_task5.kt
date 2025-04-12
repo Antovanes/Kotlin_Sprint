@@ -14,6 +14,11 @@ fun readInt(strQuestion: String): Int {
     return inputStr.toIntOrNull() ?: 0
 }
 
+const val CASE_IS_DAMAGED = false
+const val CREW_NUMBER_MIN = 55
+const val CREW_NUMBER_MAX = 70
+const val PROVISION_COUNT = 50
+
 fun main () {
 //    Задача 5* к Уроку 4
 //
@@ -41,18 +46,18 @@ fun main () {
 //    Программа должна анализировать эти данные и выводить результат в консоль.
 //    Для анализа должно использоваться единое составное условие, состоящие только из логических операторов.
 
-    val crewNumberMin = 55
-    val crewNumberMax = 70
-    val provisionCount = 50
-
     val caseIsDamaged = readBoolean("Корпус корабля повреждён? (да/нет): ")
     val numberOfCrew = readInt("Введите число экипажа: ")
     val numberOfProvision = readInt("Введите количество ящиков провизии: ")
     val weatherIsFavorable = readBoolean("Погода благоприятная? (да/нет): ")
 
     println()
-    if ((!caseIsDamaged && numberOfCrew in crewNumberMin..crewNumberMax && numberOfProvision > provisionCount) or
-        (numberOfCrew == crewNumberMax && weatherIsFavorable && numberOfProvision >= provisionCount)
+    if ((caseIsDamaged == CASE_IS_DAMAGED
+                && numberOfCrew in CREW_NUMBER_MIN..CREW_NUMBER_MAX
+                && numberOfProvision > PROVISION_COUNT)
+        or (numberOfCrew == CREW_NUMBER_MAX
+                && weatherIsFavorable &&
+                numberOfProvision >= PROVISION_COUNT)
     ) {
         println("Корабль может отправиться в плавание!")
     } else {
