@@ -1,5 +1,10 @@
 package org.example.lesson_4
 
+const val SUNNY_WEATHER = true
+const val OUTDOOR_AWNING = true
+const val AIR_HUMIDITY = 20
+const val TIME_OE_YEAR = "не зима"
+
 fun main () {
 //    Задача 3 к Уроку 4
 //
@@ -25,5 +30,8 @@ fun main () {
     val timeOfYear = "зима"
 
     println("Благоприятные ли условия сейчас для роста бобовых? " +
-            "${sunnyWeather and outdoorAwning and (airHumidity == 20) and (timeOfYear != "зима")}")
+            "${sunnyWeather == SUNNY_WEATHER 
+                    and outdoorAwning == OUTDOOR_AWNING
+                    and (airHumidity == AIR_HUMIDITY) 
+                    and (timeOfYear != TIME_OE_YEAR)}")
 }
