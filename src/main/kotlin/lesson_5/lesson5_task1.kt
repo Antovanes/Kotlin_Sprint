@@ -12,14 +12,16 @@ fun main () {
 //    При успешном решении вход в программу символизируется сообщением “Добро пожаловать!".
 //    В противном случае вывести сообщение "Доступ запрещен."
 
+    val number1 = 5
+    val number2 = 6
+    val sumResult = 11
 
-    print("Для авторизации введите результат сложения 5 + 6 = ")
-    val correctResult = 11
+    print("Для авторизации введите результат сложения $number1 + $number2 = ")
     val inputStr = readln()
 
     val number = inputStr.toIntOrNull()
     val resultStr =
-        if (number != null && number == correctResult) "Добро пожаловать!"
+        if (number != null && number == sumResult) "Добро пожаловать!"
         else "Доступ запрещён!"
 
     println(resultStr)
