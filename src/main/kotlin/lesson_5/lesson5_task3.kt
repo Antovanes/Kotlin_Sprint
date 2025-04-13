@@ -3,7 +3,7 @@ package org.example.lesson_5
 fun readInt(strQuestion: String): Int {
 
     print(strQuestion)
-    val inputStr = readln() // считывание числа в консоли
+    val inputStr = readln()
 
     val i = inputStr.toIntOrNull() ?: -1
     return if (i in 0..42) i else -1
