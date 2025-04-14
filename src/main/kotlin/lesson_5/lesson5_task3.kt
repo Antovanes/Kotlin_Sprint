@@ -30,15 +30,13 @@ fun main() {
     val num1 = readInt("Введите первое загаданное число (от 0 до 42): ")
     val num2 = readInt("Введите второе загаданное число (от 0 до 42): ")
 
-//    if (num1 > num2) num1 = num2.also { num2 = num1 }
+    val validate1 = if (num1 == numSave1) 1 else if (num1 == numSave2) 2 else 0
+    var sumValidate = if (validate1 > 0) 1 else 0
 
-    val x1 = if (num1 == numSave1) 1 else if (num1 == numSave2) 2 else 0
-    var sum = if (x1 > 0) 1 else 0
+    if ((validate1 == 1 && num2 == numSave2) || (validate1 == 2 && num2 == numSave1) ||
+        (validate1 == 0 && (num2 == numSave1 || num2 == numSave2))) sumValidate++
 
-    if ((x1 == 1 && num2 == numSave2) || (x1 == 2 && num2 == numSave1) ||
-        (x1 == 0 && (num2 == numSave1 || num2 == numSave2))) sum++
-
-    val resultStr = when (sum) {
+    val resultStr = when (sumValidate) {
         2 -> "Поздравляем! Вы выиграли главный приз!"
         1 -> "Вы выиграли утешительный приз!"
         else -> "Неудача!"
