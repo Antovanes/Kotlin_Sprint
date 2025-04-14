@@ -40,9 +40,9 @@ fun main () {
     numList.add(readInt("Введите второе загаданное число: "))
     numList.add(readInt("Введите третье загаданное число: "))
 
-    val resultList = numList.intersect(hiddenList.toSet())
+    val resultList = numList.intersect(hiddenList)
 
-    val resultStr = when (resultList.count()) {
+    val resultStr = when (resultList.size) {
         3 -> "Поздравляем! Вы выиграли джекпот!!!"
         2 -> "Поздравляем! Вы выиграли крупный приз!"
         1 -> "Вы угадали одно из 3-х чисел и получаете утешительный приз!"
