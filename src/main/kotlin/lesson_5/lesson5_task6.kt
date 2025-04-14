@@ -38,10 +38,12 @@ fun main() {
     val weightLimit3 = 30
 
     val resultIMT =
-        if (calcIMT < weightLimit1) "Недостаточная масса тела"
-        else if (calcIMT >= weightLimit1 && calcIMT < weightLimit2) "Нормальная масса тела"
-        else if (calcIMT >= weightLimit2 && calcIMT < weightLimit3) "Избыточная масса тела"
-        else "Ожирение"
+        when {
+            calcIMT < weightLimit1 -> "Недостаточная масса тела"
+            calcIMT < weightLimit2 -> "Нормальная масса тела"
+            calcIMT < weightLimit3 -> "Избыточная масса тела"
+            else -> "Ожирение"
+        }
 
     println("Ваш Индекс Массы Тела составляет: ${String.format("%.2f", calcIMT)}")
     println("Вашему ИМТ соответствует категория: $resultIMT")
